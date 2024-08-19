@@ -28,6 +28,10 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new BadCredentialsException("User with email "+username+" not found"));
     }
 
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElse(null);
+    }
     public User getUserById(Long userId) {
         return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User with id "+userId+" not found"));
     }
@@ -44,4 +48,7 @@ public class UserService implements UserDetailsService {
     }
 
 
+    public User save(User newUser) {
+        return userRepository.save(newUser);
+    }
 }
