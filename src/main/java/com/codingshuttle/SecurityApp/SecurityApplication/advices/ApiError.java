@@ -1,6 +1,5 @@
 package com.codingshuttle.SecurityApp.SecurityApplication.advices;
 
-import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 
